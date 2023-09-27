@@ -1,8 +1,9 @@
 // --------------- Juego de preguntas --------------------- 
 
 // Declaración de variables
-alert(`Un virus ha aparecido en Burkina Faso, los lideres del mundo temen por que deje varias muertes, o peor, un golpe en la economía. Tu trabajo es poder hacer una vacuna para salvar la humanidad. Estas dispuesto? `)
-alert (`Para realizar esta vacuna, deberás contestar una serie de preguntas en relación a las vacunas y la biologia molecular, si logras responder la mayoría bien, lograrás hacer la vacuna y salvar el mundo, caso contrario todos morirán`)
+
+console.log (`Un virus ha aparecido en Burkina Faso, los lideres del mundo temen por que deje varias muertes, o peor, un golpe en la economía. Tu trabajo es poder hacer una vacuna para salvar la humanidad. Estas dispuesto? `)
+console.log (`Para realizar esta vacuna, deberás contestar una serie de preguntas en relación a las vacunas y la biologia molecular, si logras responder la mayoría bien, lograrás hacer la vacuna y salvar el mundo, caso contrario todos morirán`)
 let nombre = prompt ("Ingrese su nombre");
 
 while(!nombre){
@@ -44,7 +45,7 @@ const personajes = [
         genero: "Hombre",
         profesion: "Becario de CONICET",
         especialidad: "Mantiene el laboratorio ordenado ",
-        caracteristicas: "none",
+        caracteristicas: "Exeperto en manipulacion de ADN",
         img: imgHombre,
     
       },
@@ -54,7 +55,7 @@ const personajes = [
         genero: "Mujer",
         profesion: "Inmunóloga",
         especialidad: "Investigación en inmunidad y desarrollo de vacunas",
-        caracteristicas: "Lleva un microscopio, tubos de ensayo y un libro de inmunología",
+        caracteristicas: "Experta en inmunología, futura ganadora de premio Nobel",
         img: imgMujer,
       },
     
@@ -80,10 +81,10 @@ function personaje (){
 
         console.log(`
 ${i+1}) Nombre: ${item.nombre}.
-        Genero: ${item.genero}.
-        Profesion: ${item.profesion}.
-        Especialidad: ${item.especialidad}.
-        Caracteristicas: ${item.caracteristicas}.
+Genero: ${item.genero}.
+Profesion: ${item.profesion}.
+Especialidad: ${item.especialidad}.
+Caracteristicas: ${item.caracteristicas}.
         `)
     }
 
@@ -117,18 +118,20 @@ function preguntar ( pregunta, op1, op2, op3, rta) {
 
     console.log(pregunta)
 
-    console.log (`Las opciones son: ${op1}, ${op2}, ${op3}`)
+    console.log (`Las opciones son: ${op1}; ${op2}; ${op3}`)
 
-    let rtaUsuario = prompt (`Ingrese su repuesta aqui!`)
+    let rtaUsuario = prompt (`Ingrese su repuesta aqui! (responder con A, B ò C)`)
     
     sum()
 
     if (rtaUsuario.toLowerCase() === rta) {
         console.log("Has acertado!");
         agregarPuntos();
-    } else {
+    }else{
         console.log("Lo siento, respuesta incorrecta.");
     }
+
+    console.log("-----------------------")
 }
 
 let preg1
@@ -159,7 +162,7 @@ console.log(`Hola ${nombre}, estamos frente a una emergencia sanitaria, tienes c
 console.log(`1) si
 2) No`)
 
-let rtaPrimeraIntancia = prompt (`Ingrese su repuesta`)
+let rtaPrimeraIntancia = prompt (`Ingrese su repuesta (responder con 1 o 2)`)
 
 if(rtaPrimeraIntancia == 1){
     preg3= preguntar ("¿Qué es un antígeno?", "a) Un microorganismo", "b) Una molécula que el sistema inmunológico reconoce", "c) Un medicamento", "b" )
@@ -169,8 +172,6 @@ if(rtaPrimeraIntancia == 1){
     preg2= preguntar ("¿Cuál es el propósito principal de una vacuna?", "a) Tratar enfermedades", "b) Prevenir enfermedades " , "c) Diagnosticar enfermedades", "b")
 }
 
-console.log(puntos)
-
 if(puntos == 0){
     alert(`Lo siento ${nombre}, no has podido pasar la primera instancia, vuelve a intentarlo!`)
 }
@@ -179,7 +180,7 @@ console.log(`Parece que a mucha gente le genera desconfianza la vacuna, ya que s
 console.log(`1) Si
 2) No (en este caso podrías perder puntos por no responder)`)
 
-let rtaSegundaInstancia = prompt (`Ingrese su repuesta asi`)
+let rtaSegundaInstancia = prompt (`Ingrese su repuesta aqui!(responder con 1 o 2)`)
 
 if(rtaSegundaInstancia == 1){
     preg5= preguntar ("¿Qué es la inmunidad de rebaño?", "a) Cuando todos en una comunidad tienen la misma enfermedad", "b) Cuando una gran proporción de la población es inmune a una enfermedad, lo que protege a aquellos que no lo son", "c) Cuando se desarrolla inmunidad permanente después de una sola vacunación", "b")
@@ -202,7 +203,7 @@ if ( 15<= puntos ){
     preg16= preguntar ("¿Qué tipo de ácido nucleico se encuentra en las vacunas de ARN?", "a) ARN ribosómico (ARNr)", "b) ARN de trasnferencia (ARNt)", "c) ARN mensajero (ARNm)", "c")
 }else{
     console.log(`La verdad que estuvimos un poco flojos, el laboratorio cerró por cuarentena y nos costó mas de lo que creimos, pero capaz ahora podemos remontar.`)
-    preg15= preguntar ("¿Cuál es la función de las células B en el sistema inmunitario?", "a) b) Producir anticuerpos", "b) Fagocitar patógenos", "c) Transportar oxígeno en la sangre", "a")
+    preg15= preguntar ("¿Cuál es la función de las células B en el sistema inmunitario?", "a) Producir anticuerpos", "b) Fagocitar patógenos", "c) Transportar oxígeno en la sangre", "a")
     preg18= preguntar ("¿Cuál es la función principal de las células T en el sistema inmunológico?", "a) Producir anticuerpos.", "b) Destruir células infectadas por patógenos.", "c) Filtrar la sangre.", "b")
 }
 
@@ -228,7 +229,7 @@ preg17= preguntar ("¿Qué es la PCR (Reacción en Cadena de la Polimerasa)?", "
 // Final
 if(numPreg*3 === puntos){
     console.log(`Felicitaciones, ${nombre}, has logrado un puntaje perfecto, la verdad que superaste toda expectativa posible! has salvado la humanidad y fuiste recompensado con cinco millones de dolares`)
-}else if(36 < numPreg*3 < puntos){
+}else if(36 < puntos < numPreg*3){
     console.log(`Excelente desempeño ${nombre}! Has logrado encontrar la vacuna y la sociedad te lo ha agradecido con una estatua con tu nombre! Fe-li-ci-ta-ciones!`)
 }else if (15 < puntos <= 36){
     console.log(`La vacuna ha salido, ${nombre}, pero la fakes news ganaron, lamentablemente la gente sufrió mucho culpa de grupos conspiranoicos.`)
@@ -236,4 +237,7 @@ if(numPreg*3 === puntos){
     console.log(`${nombre}, has fallecido duarente el inteto. Vuelve a intentarlo!`)
 }
 
+console.log(`Tu puntaje final fue de: ${puntos}`)
+
+console.log(`FIN DEL JUEGO`)
 
