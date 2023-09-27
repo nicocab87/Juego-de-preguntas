@@ -123,35 +123,12 @@ function preguntar ( pregunta, op1, op2, op3, rta) {
     
     sum()
 
-    for (let opcion of opciones){
-        switch(rtaUsuario){
-        
-        case opcion[0]: if(opcion[0] === rta & rtaUsuario === rta){
-            console.log("Has acertado!");
-            agregarPuntos();
-        }else{
-            console.log("Lo siento")
-        }
-        break;
-    
-        case opcion[1]: if(opcion[1] === rta & rtaUsuario === rta){
-            console.log("Has acertado!")
-            agregarPuntos();
-        }else{
-            console.log("Lo siento")
-        }
-        break;
-    
-        case opcion[2]: if(opcion[2] === rta & rtaUsuario === rta){
-            console.log("Has acertado!")
-            agregarPuntos();
-        }else{
-            console.log("Lo siento")
-        }
-        break;
-        
-        }
-    } 
+    if (rtaUsuario.toLowerCase() === rta) {
+        console.log("Has acertado!");
+        agregarPuntos();
+    } else {
+        console.log("Lo siento, respuesta incorrecta.");
+    }
 }
 
 let preg1
