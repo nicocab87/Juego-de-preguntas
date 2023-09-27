@@ -33,7 +33,6 @@ let imgDinosaurio = new Image();
 imgDinosaurio.src = `./img/personajeDino.jpg`
 
 
-
 const opciones =["A", "B", "C"]
 
 
@@ -113,7 +112,6 @@ personaje();
 
 // Juego
 
-
 function preguntar ( pregunta, op1, op2, op3, rta) {
 
     console.log(pregunta)
@@ -157,7 +155,8 @@ function preguntar ( pregunta, op1, op2, op3, rta) {
 }
 
 
-// Preguntas
+// Linea de juego
+
 
 let preg1= preguntar ("¿Qué es una vacuna?", "a) Un virus", "b) Un tratamiento médico", "c) Una preparación que estimula el sistema inmunológico", "c")
 let preg2= preguntar ("¿Cuál es el propósito principal de una vacuna?", "a) Tratar enfermedades", "b) Prevenir enfermedades " , "c) Diagnosticar enfermedades", "b")
@@ -177,22 +176,10 @@ let preg15= preguntar ("¿Cuál es la función de las células B en el sistema i
 let preg16= preguntar ("¿Qué tipo de ácido nucleico se encuentra en las vacunas de ARN?", "a) ARN ribosómico (ARNr)", "b) ARN de trasnferencia (ARNt)", "c) ARN mensajero (ARNm)", "c")
 let preg17= preguntar ("¿Qué es la PCR (Reacción en Cadena de la Polimerasa)?", "a) Una técnica para amplificar y detectar material genético.", "b) Un tipo de vacuna.", "c) Una técnica para purificar proteínas.", "a")
 let preg18= preguntar ("¿Cuál es la función principal de las células T en el sistema inmunológico?", "a) Producir anticuerpos.", "b) Destruir células infectadas por patógenos.", "c) Filtrar la sangre.", "b")
-let preg19= preguntar ("¿Cuál es la función principal de las vacunas de ARN mensajero (ARNm)?", "a) Introducir ARN viral en el cuerpo.", "b) Estimular la respuesta inmunológica sin utilizar virus vivos.", "c) Modificar el ADN humano.", "b")
+let preg19= preguntar ("¿Cuál es la función principal de las vacunas de ARN mensajero (ARNm)?", "a) Introducir ARN viral en el cuerpo.", "b) Estimular la respuesta inmunológica sin utilizar virus vivos/atenuados.", "c) Modificar el ADN humano.", "b")
 let preg20= preguntar (" ¿Cuál es el propósito de una vacuna de refuerzo?", "a) Estimular la respuesta inmunológica inicial.", "b) Mantener alta la inmunidad a largo plazo.", "c) Tratar las infecciones activas.", "b")
 
-let preguntas = [preg1, preg2, preg3, preg4, preg5, preg6, preg7, preg8, preg9, preg10, preg11, preg12, preg13, preg14, preg15, preg16, preg17, preg18, preg19, preg20];
 
-let preguntasAleatorias = [];
-
-function generarPregAleatorias (){
-    while (preguntasAleatorias.length < 6 ){
-    let indicesAleatorio = math.floor(math.random()*preguntas.length)
-    preguntasAleatorias.push (preguntas[indicesAleatorio])
-    }
-
-}
-
-console.log(preguntasAleatorias)
 
 
 
