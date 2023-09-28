@@ -88,7 +88,7 @@ Caracteristicas: ${item.caracteristicas}.
         `)
     }
 
-    let eleccionPersonaje = prompt (`Elije tu personaje!`)
+    let eleccionPersonaje = prompt (`Elije tu personaje! (seleccionar 1, 2 ò 3)`)
 
     switch (eleccionPersonaje){
         case "1": 
@@ -225,9 +225,9 @@ preg17= preguntar ("¿Qué es la PCR (Reacción en Cadena de la Polimerasa)?", "
 // Final
 if(numPreg*3 === puntos){
     console.log(`Felicitaciones, ${nombre}, has logrado un puntaje perfecto, la verdad que superaste toda expectativa posible! has salvado la humanidad y fuiste recompensado con cinco millones de dolares`)
-}else if(36 < puntos < numPreg*3){
+}else if(36 < puntos & puntos < numPreg*3){
     console.log(`Excelente desempeño ${nombre}! Has logrado encontrar la vacuna y la sociedad te lo ha agradecido con una estatua con tu nombre! Fe-li-ci-ta-ciones!`)
-}else if (15 < puntos <= 36){
+}else if (15 < puntos & puntos <= 36){
     console.log(`La vacuna ha salido, ${nombre}, pero la fakes news ganaron, lamentablemente la gente sufrió mucho culpa de grupos conspiranoicos.`)
 }else{
     console.log(`${nombre}, has fallecido duarente el inteto. Vuelve a intentarlo!`)
