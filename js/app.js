@@ -172,10 +172,6 @@ if(rtaPrimeraIntancia == 1){
     preg2= preguntar ("¿Cuál es el propósito principal de una vacuna?", "a) Tratar enfermedades", "b) Prevenir enfermedades " , "c) Diagnosticar enfermedades", "b")
 }
 
-if(puntos == 0){
-    alert(`Lo siento ${nombre}, no has podido pasar la primera instancia, vuelve a intentarlo!`)
-}
-
 console.log(`Parece que a mucha gente le genera desconfianza la vacuna, ya que se generó una gran ola de desinformación y fake news en internet, podrás ayudar a aclarar sus dudas?`)
 console.log(`1) Si
 2) No (en este caso podrías perder puntos por no responder)`)
